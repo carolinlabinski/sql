@@ -1,0 +1,28 @@
+
+	•	Récupérer tous les albums:
+	SELECT * FROM albums
+
+	•	Récupérer tous les albums dont le titre contient "Great" (indice)
+  SELECT * FROM albums WHERE Title like "%Great%"
+
+	•	Donner le nombre total d'albums contenus dans la base (sans regarder les id bien sûr)
+  SELECT count (*) FROM albums
+
+	•	Supprimer tous les albums dont le nom contient "music"
+  DELETE FROM albums WHERE Title like "%music%"
+
+	•	Récupérer tous les albums écrits par AC/DC
+ SELECT * FROM 
+ albums, 
+ artists 
+ WHERE albums.ArtistId = artists.ArtistId and artists.Name = 'AC/DC' 
+
+	•	Récupérer tous les titres des albums de AC/DC
+ SELECT tracks.Name FROM tracks, albums, artists WHERE albums.ArtistId = artists.ArtistId and artists.Name = 'AC/DC' and tracks.AlbumId = albums.AlbumId
+
+	•	Récupérer la liste des titres de l'album "Let There Be Rock"
+SELECT tracks.Name FROM tracks, albums WHERE tracks.AlbumId = albums.AlbumId and albums.Title = 'Let There Be Rock'
+
+
+Schema des BDDs:
+https://miro.com/app/board/uXjVPLsOhKg=/?share_link_id=839995136139
